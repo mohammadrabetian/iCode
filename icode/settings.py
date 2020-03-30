@@ -76,9 +76,13 @@ WSGI_APPLICATION = 'icode.wsgi.application'
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    "default": {
+        "ENGINE": get_env_variable("SQL_ENGINE", "django.db.backends.sqlite3"),
+        "NAME": get_env_variable("SQL_DATABASE", os.path.join(BASE_DIR, "db.sqlite3")),
+        "USER": get_env_variable("SQL_USER", "user"),
+        "PASSWORD": get_env_variable("SQL_PASSWORD", "password"),
+        "HOST": get_env_variable("SQL_HOST", "localhost"),
+        "PORT": get_env_variable("SQL_PORT", "5432"),
     }
 }
 
