@@ -160,6 +160,7 @@ dmypy.json
 
 # Mr Developer
 .vscode/
+.env.dev
 
 # mkdocs documentation
 
