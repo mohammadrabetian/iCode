@@ -163,6 +163,7 @@ dmypy.json
 .env.dev
 .env.prod
 .env.prod.db
+staticfiles/
 
 # mkdocs documentation
 
