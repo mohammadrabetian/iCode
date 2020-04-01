@@ -161,6 +161,8 @@ dmypy.json
 # Mr Developer
 .vscode/
 .env.dev
+.env.prod
+.env.prod.db
 
 # mkdocs documentation
 
