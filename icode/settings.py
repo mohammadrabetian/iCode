@@ -29,6 +29,18 @@ DEBUG = int(get_env_variable("DEBUG", default=0))
 
 ALLOWED_HOSTS = get_env_variable("DJANGO_ALLOWED_HOSTS").split(" ")
 
+import sentry_sdk
+from sentry_sdk.integrations.django import DjangoIntegration
+
+sentry_sdk.init(
+    dsn=get_env_variable("sentry_dsn"),
+    integrations=[DjangoIntegration()],
+
+    # If you wish to associate users to errors (assuming you are using
+    # django.contrib.auth) you may enable sending PII data.
+    send_default_pii=True
+)
+
 
 # Application definition
 
