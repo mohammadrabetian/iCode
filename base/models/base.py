@@ -7,4 +7,5 @@ class BaseModel(models.Model):
     is_deleted = models.BooleanField(default=False)
 
     class Meta:
+        app_label = "base"
         abstract = True

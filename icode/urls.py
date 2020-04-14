@@ -18,8 +18,8 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 
-from base import base_patterns
-from accounts import account_patterns
+from base.urls import base_patterns
+from accounts.urls import account_patterns
 
 
 api_patterns = [

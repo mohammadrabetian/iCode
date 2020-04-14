@@ -13,3 +13,6 @@ class FileModel(BaseModel):
     file = models.FileField(upload_to=user_directory_path)
     file_type = models.CharField(max_length=20, null=True, blank=True)
     alt = models.CharField(max_length=20, null=True, blank=True)
+
+    class Meta:
+        app_label = "base"
