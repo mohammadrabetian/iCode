@@ -144,3 +144,6 @@ MEDIA_URL = "/mediafiles/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "mediafiles")
 
 AUTH_USER_MODEL = "accounts.User"
+
+# 2.5 MB
+UPLOAD_MAX_SIZE = 2621440
