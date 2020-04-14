@@ -1,6 +1,7 @@
 from django.db import models
 
 from base.models import BaseModel
+from accounts.models import User
 
 
 
@@ -13,6 +14,7 @@ class FileModel(BaseModel):
     file = models.FileField(upload_to=user_directory_path)
     file_type = models.CharField(max_length=20, null=True, blank=True)
     alt = models.CharField(max_length=20, null=True, blank=True)
+    user = models.ForeignKey(User, on_delete=models.DO_NOTHING, related_name="files")
 
     class Meta:
         app_label = "base"
