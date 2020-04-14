@@ -160,6 +160,7 @@ dmypy.json
 
 # Mr Developer
 .vscode/
+.venv
 .env.dev
 .env.prod
 .env.prod.db
