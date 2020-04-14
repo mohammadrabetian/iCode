@@ -15,6 +15,7 @@ def upload(request: HttpRequest) -> JsonResponse:
         return JsonResponse(data={"result": "File Larger Than Allowed"}, status=400)
 
     file_object = FileModel()
+    file_object.user = request.user
     file_object.file = file
     file_object.type = file.content_type
     file_object.name = file.name
