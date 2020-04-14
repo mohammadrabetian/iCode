@@ -165,6 +165,7 @@ dmypy.json
 .env.prod
 .env.prod.db
 staticfiles/
+mediafiles/
 
 # mkdocs documentation
 

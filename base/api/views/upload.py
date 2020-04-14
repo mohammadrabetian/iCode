@@ -8,6 +8,8 @@ from base.models import FileModel
 @require_http_methods(['POST'])
 def upload(request: HttpRequest) -> JsonResponse:
     file = request.FILES.get('file')
+    user = request.user
+
     if not file:
         return JsonResponse(data={"result": "File Not Found"})
     
@@ -15,7 +17,10 @@ def upload(request: HttpRequest) -> JsonResponse:
         return JsonResponse(data={"result": "File Larger Than Allowed"}, status=400)
 
     file_object = FileModel()
-    file_object.user = request.user
+
+    if not user.is_anonymous:
+        file_object.user = request.user
+
     file_object.file = file
     file_object.type = file.content_type
     file_object.name = file.name
