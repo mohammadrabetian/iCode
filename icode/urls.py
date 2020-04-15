@@ -18,7 +18,7 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 
-from base.urls import base_patterns
+from base.api.urls import base_patterns
 from accounts.api.urls import account_patterns
 
 
