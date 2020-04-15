@@ -19,7 +19,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 from base.urls import base_patterns
-from accounts.urls import account_patterns
+from accounts.api.urls import account_patterns
 
 
 api_patterns = [
