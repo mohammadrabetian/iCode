@@ -11,7 +11,7 @@ class Answer(BaseModel):
         "accounts.Candidate", on_delete=models.DO_NOTHING, related_name="answers"
     )
     answer_text = models.TextField(null=True, blank=True)
-    answer_choice = models.CharField(null=True, blank=True)
+    answer_choice = models.CharField(max_length=100, null=True, blank=True)
     is_valid = models.NullBooleanField()
 
     class Meta:
