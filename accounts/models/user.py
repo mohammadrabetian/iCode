@@ -16,12 +16,12 @@ class User(AbstractUser):
     phone_number = models.CharField(max_length=50, blank=True, null=True)
     gender = models.CharField(max_length=100, null=True, blank=True, choices=GENDERS)
     birthdate = models.DateField(null=True, blank=True)
-    job_title = models.ForeignKey(
-        "jobs.JobTitle", on_delete=models.SET_NULL, null=True, blank=True
-    )  # TODO: jobs title model
+    technology_stacks = models.ManyToManyField(
+        "tech.TechnologyStack"
+    )  # TODO: add TechnologyStack model
     city = models.ForeignKey(
         "accounts.City", on_delete=models.SET_NULL, null=True, blank=True
-    )  # TODO: city model
+    )
     email_confirmed = models.BooleanField(default=False)
 
     class Meta:
