@@ -18,4 +18,4 @@ class BaseModel(models.Model):
     def soft_delete(self):
         self.deleted_at = datetime.utcnow()
         self.is_deleted = True
-        self.save()
+        self.save(update_fields=["deleted_at", "is_deleted"])
