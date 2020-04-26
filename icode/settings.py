@@ -33,7 +33,7 @@ ALLOWED_HOSTS = get_env_variable("DJANGO_ALLOWED_HOSTS").split(" ")
 #from sentry_sdk.integrations.django import DjangoIntegration
 
 #sentry_sdk.init(
-#    dsn=get_env_variable("sentry_dsn"),
+#    dsn=get_env_variable("SENTRY_DSN"),
 #    integrations=[DjangoIntegration()],
 
 #    # If you wish to associate users to errors (assuming you are using
@@ -149,3 +149,10 @@ AUTH_USER_MODEL = "accounts.User"
 
 # 2.5 MB
 UPLOAD_MAX_SIZE = 2621440
+
+# Email settings
+EMAIL_HOST = get_env_variable("EMAIL_HOST")
+EMAIL_HOST_USER = get_env_variable("EMAIL_HOST_USER")
+EMAIL_HOST_PASSWORD = get_env_variable("EMAIL_HOST_PASSWORD")
+EMAIL_PORT = get_env_variable("EMAIL_PORT")
+EMAIL_USE_TLS = int(get_env_variable("EMAIL_USER_TLS", default=0))
