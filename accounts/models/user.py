@@ -16,9 +16,9 @@ class User(AbstractUser):
     phone_number = models.CharField(max_length=50, blank=True, null=True)
     gender = models.CharField(max_length=100, null=True, blank=True, choices=GENDERS)
     birthdate = models.DateField(null=True, blank=True)
-    technology_stacks = models.ManyToManyField(
-        "tech.TechnologyStack"
-    )  # TODO: add TechnologyStack model
+    # technology_stacks = models.ManyToManyField(
+    #     "tech.TechnologyStack"
+    # )  # TODO: add TechnologyStack model
     city = models.ForeignKey(
         "accounts.City", on_delete=models.SET_NULL, null=True, blank=True
     )
