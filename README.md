@@ -10,7 +10,7 @@ Do the instructions below to get the app going.
 
 ### Prerequisites
 
-Install official docker [docker](https://docs.docker.com/install/) & [docker-compose](https://docs.docker.com/compose/install/)
+Install official distributions of [docker](https://docs.docker.com/install/) & [docker-compose](https://docs.docker.com/compose/install/)
 
 
 Set the environment variables -> See the examples in .env.example
