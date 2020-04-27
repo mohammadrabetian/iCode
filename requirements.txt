@@ -6,3 +6,15 @@ gunicorn==20.0.4
 sentry-sdk==0.14.3
 djangorestframework==3.11.0
 ptvsd==5.0.0a12
+django-extensions==2.2.9
+ipython==7.13.0
+ipython-genutils==0.2.0
+jedi==0.17.0
+wcwidth==0.1.9
+ptyprocess==0.6.0
+parso==0.7.0
+decorator==4.4.2
+backcall==0.1.0
+pickleshare==0.7.5
+pexpect==4.8.0
+traitlets==4.3.3

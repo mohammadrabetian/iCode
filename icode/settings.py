@@ -55,6 +55,7 @@ INSTALLED_APPS = [
     'accounts.apps.AccountsConfig',
     'base',
     'exam',
+    'django_extensions',
 ]
 
 MIDDLEWARE = [
