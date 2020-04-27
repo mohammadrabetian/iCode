@@ -63,3 +63,4 @@ docker container exec -it icode_web sh
 * [gunicorn](https://gunicorn.org/)
 * [nginx](https://www.nginx.com/)
 * [Postgres](https://www.postgresql.org/)
+* [Redis](https://redis.io/)
