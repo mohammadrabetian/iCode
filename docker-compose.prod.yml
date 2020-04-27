@@ -31,7 +31,16 @@ services:
       - 1337:80
     depends_on:
       - web
+    
+  redis:
+    image: redis:5.0.9-alpine
+    ports: 
+      - 6379:6379
+    volumes: 
+      - redis_data:/var/lib/redis/data/
+
 volumes:
   postgres_data:
   static_volume:
   media_volume:
+  redis_data:
