@@ -29,6 +29,13 @@ To run in production mode
 docker-compose -f docker-compose.prod.yml up -d
 ```
 
+To follow logs
+
+```bash
+docker-compose logs -f
+```
+
+
 ### Debugging
 
 ptvsd is installed in the app
