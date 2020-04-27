@@ -13,4 +13,10 @@ from django.core.wsgi import get_wsgi_application
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'icode.settings')
 
+# attach debugger if on debug
+if os.environ.get("DEBUG"):
+    import ptvsd
+    ptvsd.enable_attach(address=('0.0.0.0', 8888))
+    print("Attached Remote Debugger")
+
 application = get_wsgi_application()

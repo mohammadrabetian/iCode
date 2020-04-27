@@ -159,7 +159,7 @@ dmypy.json
 # Rope project settings
 
 # Mr Developer
-.vscode
+.vscode/settings.json
 .venv
 .env.dev
 .env.prod
