@@ -56,6 +56,7 @@ INSTALLED_APPS = [
     'base',
     'exam',
     'django_extensions',
+    'techs',
 ]
 
 MIDDLEWARE = [
