@@ -33,22 +33,23 @@ docker-compose -f docker-compose.prod.yml up -d
 
 ptvsd is installed in the app
 
-To debug in vs-code, run docker-compose in development mode and attach vscode to the server by pushing play button in debug tab
+To debug in vs-code, un-comment the code in wsgi.py 
+Then, run docker-compose in development mode and attach vscode to the server by pushing play button in debug tab
 
 Django shell
 ```bash
-docker-compose exec web manage.py shell
+docker-compose exec web python manage.py shell
 ```
 or
 
 shell plus
 ```bash
-docker-compose exec web manage.py shell_plus --ipython
+docker-compose exec web python manage.py shell_plus --ipython
 ```
 
 database migration
 ```bash
-docker-compose exec web manage.py migrate
+docker-compose exec web python manage.py migrate
 ```
 
 ssh into app container
