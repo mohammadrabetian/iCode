@@ -1,10 +1,12 @@
 # pull official base image
 FROM python:3.8.0-alpine
 
-MAINTAINER Mohammad Rabetian <mohammadrabetian@gmail.com>
+LABEL maintainer="Mohammad Rabetian <mohammadrabetian@gmail.com>"
 
-# set environment variables
+# Keeps Python from generating .pyc files in the container
 ENV PYTHONDONTWRITEBYTECODE 1
+
+# Turns off buffering for easier container logging
 ENV PYTHONUNBUFFERED 1
 
 # install psycopg2 dependencies

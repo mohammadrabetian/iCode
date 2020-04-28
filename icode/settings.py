@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 
 import os
 
-from .helpers import get_env_variable
+from base.helpers import get_env_variable
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -33,7 +33,7 @@ ALLOWED_HOSTS = get_env_variable("DJANGO_ALLOWED_HOSTS").split(" ")
 #from sentry_sdk.integrations.django import DjangoIntegration
 
 #sentry_sdk.init(
-#    dsn=get_env_variable("sentry_dsn"),
+#    dsn=get_env_variable("SENTRY_DSN"),
 #    integrations=[DjangoIntegration()],
 
 #    # If you wish to associate users to errors (assuming you are using
@@ -55,6 +55,8 @@ INSTALLED_APPS = [
     'accounts.apps.AccountsConfig',
     'base',
     'exam',
+    'django_extensions',
+    'techs',
 ]
 
 MIDDLEWARE = [
@@ -149,3 +151,12 @@ AUTH_USER_MODEL = "accounts.User"
 
 # 2.5 MB
 UPLOAD_MAX_SIZE = 2621440
+
+Email settings
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = get_env_variable("EMAIL_HOST")
+EMAIL_HOST_USER = get_env_variable("EMAIL_HOST_USER")
+EMAIL_HOST_PASSWORD = get_env_variable("EMAIL_HOST_PASSWORD")
+EMAIL_PORT = get_env_variable("EMAIL_PORT")
+EMAIL_USE_TLS = int(get_env_variable("EMAIL_USE_TLS", default=1))
+EMAIL_USE_SSL = int(get_env_variable("EMAIL_USE_SSL", default=0))

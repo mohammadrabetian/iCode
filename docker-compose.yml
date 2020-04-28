@@ -10,10 +10,13 @@ services:
       - .:/code 
     ports:
       - 8000:8000
+      - 8888:8888 # for debugging(ptvsd)
     env_file:
       - ./.env.dev
     depends_on:
       - db
+      - redis
+
   db:
     image: postgres:12.0-alpine
     volumes:
@@ -23,5 +26,13 @@ services:
       - POSTGRES_PASSWORD=testing321
       - POSTGRES_DB=icode
 
+  redis:
+    image: redis:5.0.9-alpine
+    ports: 
+      - 9000:6379
+    volumes: 
+      - redis_data:/var/lib/redis/data/
+
 volumes:
   postgres_data:
+  redis_data:
