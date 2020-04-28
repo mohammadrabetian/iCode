@@ -19,9 +19,9 @@ class User(AbstractUser):
     # technology_stacks = models.ManyToManyField(
     #     "tech.TechnologyStack"
     # )  # TODO: add TechnologyStack model
-    city = models.ForeignKey(
-        "accounts.City", on_delete=models.SET_NULL, null=True, blank=True
-    )
+    # city = models.ForeignKey(
+    #     "accounts.City", on_delete=models.SET_NULL, null=True, blank=True
+    # )
     email_confirmed = models.BooleanField(default=False)
 
     class Meta:

@@ -14,7 +14,6 @@ class CreateUserSerializer(serializers.Serializer):
     phone_number = serializers.RegexField(regex="\+\d{12}", allow_blank=False)
     gender = serializers.ChoiceField(choices=["male", "female", "other"], allow_blank=False)
     birth_date = serializers.DateField(input_formats=["%Y-%m-%d"], format="%Y-%m-%d")
-    city = serializers.IntegerField()
     
     def save(self):
         self.validated_data["password"] = make_password(

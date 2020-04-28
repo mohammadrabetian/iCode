@@ -152,7 +152,7 @@ AUTH_USER_MODEL = "accounts.User"
 # 2.5 MB
 UPLOAD_MAX_SIZE = 2621440
 
-Email settings
+# Email settings
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = get_env_variable("EMAIL_HOST")
 EMAIL_HOST_USER = get_env_variable("EMAIL_HOST_USER")
