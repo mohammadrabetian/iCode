@@ -38,10 +38,12 @@ class EditUserSerializer(serializers.Serializer):
         self.validated_data["password"] = make_password(
             self.validated_data.get("password")
         )
-        return super(CreateUserSerializer, self).save()
+        return super(EditUserSerializer, self).save()
 
     def create(self, validated_data):
-        return User(**validated_data).save()
+        user = User(**validated_data)
+        user.save()
+        return user
 
 class GetUserSerializer(serializers.Serializer):
     id = serializers.IntegerField()

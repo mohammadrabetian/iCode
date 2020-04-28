@@ -4,7 +4,7 @@ from rest_framework import status
 from rest_framework.views import APIView
 from rest_framework.response import Response
 
-from accounts.serializers import CreateUserSerializer, GetUserSerializer
+from accounts.serializers import CreateUserSerializer, GetUserSerializer, EditUserSerializer
 from accounts.models import User
 
 
@@ -24,3 +24,11 @@ class UserView(APIView):
         page=pages.page(page)
         serialized_data = GetUserSerializer(page , many=True)
         return Response (serialized_data.data, status=status.HTTP_200_OK)
+    
+    def put(self, request):
+        serialized_data = EditUserSerializer(data=request.data)
+        if serialized_data.is_valid():
+            serialized_data.save()
+            return Response(data=serialized_data.data, status=status.HTTP_200_OK)
+        return Response(data=serialized_data.errors, status=status.HTTP_400_BAD_REQUEST)
+
