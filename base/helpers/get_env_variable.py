@@ -11,7 +11,7 @@ def get_env_variable(var_name, default=None):
     try:
         return os.environ[var_name]
     except KeyError:
-        if default:
+        if default is not None:
             return default
         err = f'Set the {var_name} environment variable.'
         raise ImproperlyConfigured(err)
