@@ -42,3 +42,14 @@ class EditUserSerializer(serializers.Serializer):
 
     def create(self, validated_data):
         return User(**validated_data).save()
+
+class GetUserSerializer(serializers.Serializer):
+    id = serializers.IntegerField()
+    username = serializers.CharField()
+    email = serializers.EmailField()
+    first_name = serializers.CharField()
+    last_name = serializers.CharField()
+    phone_number = serializers.CharField()
+    gender = serializers.ChoiceField(choices=["male", "female", "other"])
+    birth_date = serializers.DateField(format="%Y-%m-%d")
+    active = serializers.BooleanField(source='is_active')
