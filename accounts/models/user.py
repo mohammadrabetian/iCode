@@ -6,7 +6,7 @@ class User(AbstractUser):
     # genders
     MALE = "male"
     FEMALE = "female"
-    OTHER = "Other"
+    OTHER = "other"
     GENDERS = (
         (MALE, "Male"),
         (FEMALE, "Female"),
@@ -15,7 +15,7 @@ class User(AbstractUser):
 
     phone_number = models.CharField(max_length=50, blank=True, null=True)
     gender = models.CharField(max_length=100, null=True, blank=True, choices=GENDERS)
-    birthdate = models.DateField(null=True, blank=True)
+    birth_date = models.DateField(null=True, blank=True)
     # technology_stacks = models.ManyToManyField(
     #     "tech.TechnologyStack"
     # )  # TODO: add TechnologyStack model
