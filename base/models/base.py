@@ -9,7 +9,9 @@ class BaseModel(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
     deleted_at = models.DateTimeField(null=True, blank=True)
     is_deleted = models.BooleanField(default=False)
-    uuid = models.UUIDField(default=uuid.uuid4, editable=False, unique=True)
+    uuid = models.UUIDField(
+        db_index=True, default=uuid.uuid4, editable=False, unique=True
+    )
 
     class Meta:
         app_label = "base"
