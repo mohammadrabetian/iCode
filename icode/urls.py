@@ -18,18 +18,18 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 
-from base.api.urls import base_patterns
-from accounts.api.urls import account_patterns
+from base.api.urls import base_patterns_v1
+from accounts.api.urls import account_patterns_v1
 
 
-api_patterns = [
-    path("accounts/", include(account_patterns)),
-    path("base/", include(base_patterns)),
+api_patterns_v1 = [
+    path("accounts/", include(account_patterns_v1)),
+    path("base/", include(base_patterns_v1)),
 ]
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("api/", include(api_patterns)),
+    path("api/v1/", include(api_patterns_v1)),
 ]
 
 if settings.DEBUG:
