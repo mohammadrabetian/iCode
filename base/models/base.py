@@ -9,9 +9,10 @@ class BaseModel(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
     deleted_at = models.DateTimeField(null=True, blank=True)
     is_deleted = models.BooleanField(default=False)
+    slug = models.SlugField(unique=True) # used to find web url
     uuid = models.UUIDField(
         db_index=True, default=uuid.uuid4, editable=False, unique=True
-    )
+    ) # used by api to look up the record
 
     class Meta:
         app_label = "base"
