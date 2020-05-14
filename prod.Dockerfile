@@ -5,7 +5,7 @@
 # pull official base image
 FROM python:3.8.0-alpine as builder
 
-MAINTAINER Mohammad Rabetian <mohammadrabetian@gmail.com>
+LABEL MAINTAINER Mohammad Rabetian <mohammadrabetian@gmail.com>
 
 # set work directory
 WORKDIR /code

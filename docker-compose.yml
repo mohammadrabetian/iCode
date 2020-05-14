@@ -4,7 +4,7 @@ services:
   web:
     build:
       context: .
-      dockerfile: django-Dockerfile
+      dockerfile: django.Dockerfile
     command: python manage.py runserver 0.0.0.0:8000
     volumes:
       - .:/code 
@@ -32,6 +32,16 @@ services:
       - 9000:6379
     volumes: 
       - redis_data:/var/lib/redis/data/
+  
+  # excalidraw
+  whiteboard:
+    build:
+      context: ./whiteboard
+      dockerfile: node.Dockerfile
+    container_name: whiteboard
+    ports:
+      - "5000:80"
+    restart: on-failure
 
 volumes:
   postgres_data:
