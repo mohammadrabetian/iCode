@@ -3,8 +3,6 @@ FROM node:14-alpine AS build
 
 LABEL maintainer="Mohammad Rabetian <mohammadrabetian@gmail.com>"
 
-ENV NODE_ENV=production
-
 # make directory & install dependencies
 RUN mkdir /code
 WORKDIR /code
@@ -14,6 +12,7 @@ RUN npm install
 
 # copy project
 COPY . /code/
+ENV NODE_ENV=production
 RUN npm run build:app
 
 FROM nginx:1.17-alpine
